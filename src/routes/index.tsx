@@ -1,24 +1,66 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/sunmax/SiteHeader";
+import { RateTicker } from "@/components/sunmax/RateTicker";
+import {
+  About,
+  Brands,
+  Contact,
+  Equipment,
+  Hero,
+  Projects,
+  Reviews,
+  Services,
+  SiteFooter,
+  StatsBand,
+  Team,
+} from "@/components/sunmax/Sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "SunMax | Solar Panels, Inverters & Installation in Pakistan";
+const description =
+  "SunMax supplies Tier-1 solar panels, inverters and lithium batteries and installs complete solar systems for homes, businesses, industry and farms across Pakistan.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
+  loader: () => ({
+    rateDate: new Intl.DateTimeFormat("en-PK", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "Asia/Karachi",
+    }).format(new Date()),
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const { rateDate } = Route.useLoaderData();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <RateTicker date={rateDate} />
+      <main>
+        <Hero />
+        <StatsBand />
+        <About />
+        <Equipment />
+        <Brands />
+        <Services />
+        <Projects />
+        <Reviews />
+        <Team />
+        <Contact />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
