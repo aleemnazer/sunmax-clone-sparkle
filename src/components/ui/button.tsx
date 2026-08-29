@@ -16,7 +16,13 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-      },
+        solar:
+          "bg-gradient-solar text-primary-foreground font-display uppercase tracking-widest font-bold shadow-solar hover:brightness-105",
+        outlineLight:
+          "border border-white/25 bg-white/5 text-ink-foreground font-display uppercase tracking-widest font-bold hover:bg-white/15",
+        ghostSolar:
+          "text-primary font-display uppercase tracking-widest font-bold hover:text-primary/80",
+
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
