@@ -22,6 +22,7 @@ const buttonVariants = cva(
           "border border-white/25 bg-white/5 text-ink-foreground font-display uppercase tracking-widest font-bold hover:bg-white/15",
         ghostSolar:
           "text-primary font-display uppercase tracking-widest font-bold hover:text-primary/80",
+      },
 
       size: {
         default: "h-9 px-4 py-2",
