@@ -6,8 +6,8 @@ export function RateTicker({ date }: { date: string }) {
 
   return (
     <div className="flex flex-col border-y border-border bg-surface sm:flex-row">
-      <div className="flex shrink-0 items-center gap-3 bg-gradient-solar px-5 py-3">
-        <span className="font-display text-sm font-bold uppercase tracking-widest text-primary-foreground">
+      <div className="flex shrink-0 items-center gap-3 bg-gradient-solar px-4 py-2.5 sm:px-5 sm:py-3">
+        <span className="font-display text-xs font-bold uppercase tracking-widest text-primary-foreground sm:text-sm">
           Solar Panel Rates
         </span>
         <span className="hidden text-xs font-semibold text-primary-foreground/80 sm:inline">

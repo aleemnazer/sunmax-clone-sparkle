@@ -77,14 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "SunMax Energy | Solar Solutions in Lahore, Pakistan" },
+      {
+        name: "description",
+        content:
+          "SunMax Energy supplies and installs solar panels, inverters and lithium batteries for homes, businesses and industry in Lahore and across Pakistan.",
+      },
+      { name: "author", content: "SunMax Energy" },
+      { property: "og:site_name", content: "SunMax Energy" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {

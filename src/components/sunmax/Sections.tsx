@@ -50,27 +50,27 @@ export function Hero() {
         className="absolute inset-0 size-full object-cover opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-      <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
         <p className="text-eyebrow">Welcome to SunMax</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-bold uppercase leading-[1.05] text-ink-foreground sm:text-5xl lg:text-6xl">
-          Solar Equipment and Installation Services Across Pakistan
+        <h1 className="mt-3 max-w-3xl text-[1.85rem] font-bold uppercase leading-[1.1] text-ink-foreground sm:mt-4 sm:text-5xl lg:text-6xl">
+          Solar Equipment and Installation Services in Lahore &amp; Across Pakistan
         </h1>
-        <p className="mt-6 max-w-2xl text-base text-ink-muted sm:text-lg">
+        <p className="mt-5 max-w-2xl text-sm text-ink-muted sm:mt-6 sm:text-lg">
           SunMax supplies Tier-1 solar panels, inverters and lithium batteries, and builds
           complete systems for homes, businesses, industry and farms — from load audit to
           net metering.
         </p>
-        <div className="mt-9 flex flex-wrap gap-3">
-          <Button asChild variant="solar" size="lg">
+        <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
+          <Button asChild variant="solar" size="lg" className="w-full sm:w-auto">
             <a href="#contact">
               Contact Us <ArrowRight className="size-4" />
             </a>
           </Button>
-          <Button asChild variant="outlineLight" size="lg">
+          <Button asChild variant="outlineLight" size="lg" className="w-full sm:w-auto">
             <a href="#services">Our Services</a>
           </Button>
         </div>
-        <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+        <dl className="mt-10 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-5 sm:mt-16 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-6">
           {[
             ["1,400+", "Sites commissioned"],
             ["420 MW", "Supplied annually"],
@@ -90,12 +90,12 @@ export function Hero() {
 
 export function StatsBand() {
   return (
-    <section className="bg-background py-14">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border px-0 sm:grid-cols-4 lg:mx-auto lg:max-w-7xl">
+    <section className="bg-background px-4 py-10 sm:px-6 sm:py-14">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} className="bg-card p-6 text-center">
-            <p className="font-display text-2xl font-bold text-foreground">{s.value}</p>
-            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+          <div key={s.label} className="bg-card p-4 text-center sm:p-6">
+            <p className="font-display text-xl font-bold text-foreground sm:text-2xl">{s.value}</p>
+            <p className="mt-1 text-[0.65rem] uppercase tracking-widest text-muted-foreground sm:text-xs">
               {s.label}
             </p>
           </div>
@@ -131,8 +131,8 @@ export function About() {
   const tab = aboutTabs.find((t) => t.key === active)!;
 
   return (
-    <section id="about" className="bg-surface py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2">
+    <section id="about" className="bg-surface py-14 sm:py-20 lg:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:gap-14 sm:px-6 lg:grid-cols-2">
         <div className="relative">
           <img
             src={aboutImg}
@@ -142,7 +142,7 @@ export function About() {
             height={1280}
             className="w-full rounded-lg object-cover shadow-card"
           />
-          <div className="absolute -bottom-6 left-6 rounded-lg bg-gradient-solar px-6 py-4 shadow-solar">
+          <div className="absolute -bottom-5 left-4 sm:left-6 rounded-lg bg-gradient-solar px-6 py-4 shadow-solar">
             <p className="font-display text-3xl font-bold text-primary-foreground">10+</p>
             <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/85">
               Years of experience
@@ -203,14 +203,14 @@ const equipmentMedia = [
 
 export function Equipment() {
   return (
-    <section id="equipment" className="bg-background py-20 lg:py-28">
+    <section id="equipment" className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <Eyebrow small="SunMax" big="Equipment" />
           <h2 className="section-title text-foreground">Solar Equipment Trading</h2>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:mt-12 sm:gap-8 md:grid-cols-3">
           {equipment.map((item, i) => {
             const media = equipmentMedia[i]!;
             const Icon = media.icon;
@@ -263,7 +263,7 @@ export function Equipment() {
 export function Brands() {
   const loop = [...brands, ...brands];
   return (
-    <section className="border-y border-border bg-surface py-14">
+    <section className="border-y border-border bg-surface py-10 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center">
           <Eyebrow small="SunMax" big="Product Lines" />
@@ -288,7 +288,7 @@ export function Brands() {
 
 export function Services() {
   return (
-    <section id="services" className="bg-gradient-ink py-20 lg:py-28">
+    <section id="services" className="bg-gradient-ink py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <p className="text-eyebrow">Our</p>
@@ -300,7 +300,7 @@ export function Services() {
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <div key={s.title} className="bg-ink p-7">
+            <div key={s.title} className="bg-ink p-6 sm:p-7">
               <span className="font-display text-4xl font-bold text-primary/50">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -318,7 +318,7 @@ export function Services() {
 
 export function Projects() {
   return (
-    <section id="projects" className="bg-background py-20 lg:py-28">
+    <section id="projects" className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -362,7 +362,7 @@ export function Projects() {
             ["12k+", "Happy customers", "Households and businesses running on systems we supplied and installed."],
             ["250+", "Solar solutions", "Custom on-grid, hybrid and pumping designs delivered nationwide."],
           ].map(([v, t, c]) => (
-            <div key={t} className="rounded-lg border border-border bg-surface p-8">
+            <div key={t} className="rounded-lg border border-border bg-surface p-6 sm:p-8">
               <p className="font-display text-4xl font-bold text-primary">{v}</p>
               <h3 className="mt-2 font-display text-xl font-bold uppercase text-foreground">{t}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{c}</p>
@@ -376,14 +376,14 @@ export function Projects() {
 
 export function Reviews() {
   return (
-    <section id="reviews" className="bg-surface py-20 lg:py-28">
+    <section id="reviews" className="bg-surface py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
           <div>
             <Eyebrow small="Customer" big="Testimonials" />
             <h2 className="section-title text-foreground">Trusted by Customers Across Pakistan</h2>
           </div>
-          <div className="rounded-lg bg-gradient-solar px-8 py-6 text-center shadow-solar">
+          <div className="rounded-lg bg-gradient-solar px-6 py-5 text-center sm:px-8 sm:py-6 shadow-solar">
             <p className="font-display text-4xl font-bold text-primary-foreground">4.9/5</p>
             <div className="mt-1 flex justify-center gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -422,7 +422,7 @@ export function Reviews() {
 
 export function Team() {
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <Eyebrow small="Our" big="Team" />
@@ -458,8 +458,8 @@ export function Contact() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="contact" className="bg-gradient-ink py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2">
+    <section id="contact" className="bg-gradient-ink py-14 sm:py-20 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:gap-12 sm:px-6 lg:grid-cols-2">
         <div>
           <p className="text-eyebrow">Contact</p>
           <h2 className="section-title mt-3 text-ink-foreground">Get a System Quote</h2>
@@ -470,16 +470,16 @@ export function Contact() {
 
           <ul className="mt-10 space-y-5">
             {[
-              { icon: Phone, label: "0321 8452143", sub: "Sales & support, 9am - 8pm" },
+              { icon: Phone, label: "+92 321 8452143", sub: "Sales & support, 9am - 8pm" },
               { icon: Mail, label: "sales@sunmax.pk", sub: "Quotes within one working day" },
               { icon: MapPin, label: "Lahore", sub: "Warehouses and service centres across Punjab" },
             ].map((c) => (
-              <li key={c.label} className="flex items-start gap-4">
+              <li key={c.label} className="flex items-start gap-3 sm:gap-4">
                 <span className="grid size-11 shrink-0 place-items-center rounded-md bg-white/10">
                   <c.icon className="size-5 text-primary" />
                 </span>
                 <div>
-                  <p className="font-display text-lg font-bold uppercase text-ink-foreground">
+                  <p className="font-display text-base font-bold uppercase text-ink-foreground sm:text-lg">
                     {c.label}
                   </p>
                   <p className="text-sm text-ink-muted">{c.sub}</p>
@@ -555,7 +555,7 @@ export function Contact() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink py-14 text-ink-muted">
+    <footer className="bg-ink py-10 text-ink-muted sm:py-14">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
@@ -591,7 +591,11 @@ export function SiteFooter() {
             Contact
           </p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li>0321 8452143</li>
+            <li>
+              <a href="tel:+923218452143" className="hover:text-primary">
+                +92 321 8452143
+              </a>
+            </li>
             <li>sales@sunmax.pk</li>
             <li>Lahore, Punjab</li>
           </ul>
