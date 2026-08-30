@@ -29,12 +29,12 @@ export function SiteHeader() {
         solid ? "bg-ink/95 backdrop-blur border-b border-white/10" : "bg-ink"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-6 sm:py-4 sm:px-6">
         <a href="#home" className="flex items-center gap-2.5">
           <span className="grid size-9 place-items-center rounded-md bg-gradient-solar shadow-solar">
             <Sun className="size-5 text-primary-foreground" strokeWidth={2.5} />
           </span>
-          <span className="font-display text-2xl font-bold uppercase tracking-wide text-ink-foreground">
+          <span className="font-display text-xl font-bold uppercase tracking-wide sm:text-2xl text-ink-foreground">
             Sun<span className="text-primary">Max</span>
           </span>
         </a>
@@ -57,7 +57,7 @@ export function SiteHeader() {
             className="hidden items-center gap-2 text-sm font-semibold text-ink-foreground sm:flex"
           >
             <Phone className="size-4 text-primary" />
-            0321 8452143
+            +92 321 8452143
           </a>
           <Button asChild variant="solar" size="sm" className="hidden sm:inline-flex">
             <a href="#contact">Get a Quote</a>
@@ -85,6 +85,13 @@ export function SiteHeader() {
               {item.label}
             </a>
           ))}
+          <a
+            href="tel:+923218452143"
+            className="mt-4 flex items-center gap-2 text-sm font-semibold text-ink-foreground sm:hidden"
+          >
+            <Phone className="size-4 text-primary" />
+            +92 321 8452143
+          </a>
           <Button asChild variant="solar" className="mt-4 w-full">
             <a href="#contact" onClick={() => setOpen(false)}>
               Get a Quote
