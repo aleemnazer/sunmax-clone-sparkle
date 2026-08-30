@@ -127,7 +127,7 @@ const aboutTabs = [
 ];
 
 export function About() {
-  const [active, setActive] = useState(aboutTabs[0].key);
+  const [active, setActive] = useState(aboutTabs[0]!.key);
   const tab = aboutTabs.find((t) => t.key === active)!;
 
   return (
@@ -212,7 +212,7 @@ export function Equipment() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {equipment.map((item, i) => {
-            const media = equipmentMedia[i];
+            const media = equipmentMedia[i]!;
             const Icon = media.icon;
             return (
               <article
