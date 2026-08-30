@@ -50,27 +50,27 @@ export function Hero() {
         className="absolute inset-0 size-full object-cover opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-      <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
         <p className="text-eyebrow">Welcome to SunMax</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-bold uppercase leading-[1.05] text-ink-foreground sm:text-5xl lg:text-6xl">
-          Solar Equipment and Installation Services Across Pakistan
+        <h1 className="mt-3 max-w-3xl text-[1.85rem] font-bold uppercase leading-[1.1] text-ink-foreground sm:mt-4 sm:text-5xl lg:text-6xl">
+          Solar Equipment and Installation Services in Lahore &amp; Across Pakistan
         </h1>
-        <p className="mt-6 max-w-2xl text-base text-ink-muted sm:text-lg">
+        <p className="mt-5 max-w-2xl text-sm text-ink-muted sm:mt-6 sm:text-lg">
           SunMax supplies Tier-1 solar panels, inverters and lithium batteries, and builds
           complete systems for homes, businesses, industry and farms — from load audit to
           net metering.
         </p>
-        <div className="mt-9 flex flex-wrap gap-3">
-          <Button asChild variant="solar" size="lg">
+        <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
+          <Button asChild variant="solar" size="lg" className="w-full sm:w-auto">
             <a href="#contact">
               Contact Us <ArrowRight className="size-4" />
             </a>
           </Button>
-          <Button asChild variant="outlineLight" size="lg">
+          <Button asChild variant="outlineLight" size="lg" className="w-full sm:w-auto">
             <a href="#services">Our Services</a>
           </Button>
         </div>
-        <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+        <dl className="mt-10 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-5 sm:mt-16 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-6">
           {[
             ["1,400+", "Sites commissioned"],
             ["420 MW", "Supplied annually"],
