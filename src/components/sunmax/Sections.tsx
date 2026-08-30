@@ -90,12 +90,12 @@ export function Hero() {
 
 export function StatsBand() {
   return (
-    <section className="bg-background py-14">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border px-0 sm:grid-cols-4 lg:mx-auto lg:max-w-7xl">
+    <section className="bg-background px-4 py-10 sm:px-6 sm:py-14">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} className="bg-card p-6 text-center">
-            <p className="font-display text-2xl font-bold text-foreground">{s.value}</p>
-            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+          <div key={s.label} className="bg-card p-4 text-center sm:p-6">
+            <p className="font-display text-xl font-bold text-foreground sm:text-2xl">{s.value}</p>
+            <p className="mt-1 text-[0.65rem] uppercase tracking-widest text-muted-foreground sm:text-xs">
               {s.label}
             </p>
           </div>
