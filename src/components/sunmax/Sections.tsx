@@ -127,7 +127,7 @@ const aboutTabs = [
 ];
 
 export function About() {
-  const [active, setActive] = useState(aboutTabs[0].key);
+  const [active, setActive] = useState(aboutTabs[0]!.key);
   const tab = aboutTabs.find((t) => t.key === active)!;
 
   return (
@@ -155,6 +155,11 @@ export function About() {
           <h2 className="section-title text-foreground">
             Solar Products and Professional Services Across Pakistan
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Based in Lahore, we have completed installations in almost all major societies of the
+            city — including DHA, Bahria Town, Johar Town, Model Town, Wapda Town, Valencia,
+            Faisal Town, Gulberg and Lake City — and supply equipment nationwide.
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-2">
             {aboutTabs.map((t) => (
@@ -207,7 +212,7 @@ export function Equipment() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {equipment.map((item, i) => {
-            const media = equipmentMedia[i];
+            const media = equipmentMedia[i]!;
             const Icon = media.icon;
             return (
               <article
@@ -465,9 +470,9 @@ export function Contact() {
 
           <ul className="mt-10 space-y-5">
             {[
-              { icon: Phone, label: "0300 123 4567", sub: "Sales & support, 9am - 8pm" },
+              { icon: Phone, label: "0321 8452143", sub: "Sales & support, 9am - 8pm" },
               { icon: Mail, label: "sales@sunmax.pk", sub: "Quotes within one working day" },
-              { icon: MapPin, label: "Lahore & Karachi", sub: "Warehouses and service centres" },
+              { icon: MapPin, label: "Lahore", sub: "Warehouses and service centres across Punjab" },
             ].map((c) => (
               <li key={c.label} className="flex items-start gap-4">
                 <span className="grid size-11 shrink-0 place-items-center rounded-md bg-white/10">
@@ -586,9 +591,9 @@ export function SiteFooter() {
             Contact
           </p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li>0300 123 4567</li>
+            <li>0321 8452143</li>
             <li>sales@sunmax.pk</li>
-            <li>Lahore &middot; Karachi</li>
+            <li>Lahore, Punjab</li>
           </ul>
         </div>
       </div>

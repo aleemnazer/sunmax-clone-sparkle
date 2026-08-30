@@ -53,11 +53,11 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <a
-            href="tel:+923001234567"
+            href="tel:+923218452143"
             className="hidden items-center gap-2 text-sm font-semibold text-ink-foreground sm:flex"
           >
             <Phone className="size-4 text-primary" />
-            0300 123 4567
+            0321 8452143
           </a>
           <Button asChild variant="solar" size="sm" className="hidden sm:inline-flex">
             <a href="#contact">Get a Quote</a>
