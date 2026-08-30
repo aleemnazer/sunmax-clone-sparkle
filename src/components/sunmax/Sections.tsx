@@ -131,7 +131,7 @@ export function About() {
   const tab = aboutTabs.find((t) => t.key === active)!;
 
   return (
-    <section id="about" className="bg-surface py-10 sm:py-14 sm:py-20 lg:py-28">
+    <section id="about" className="bg-surface py-14 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:gap-14 sm:px-6 lg:grid-cols-2">
         <div className="relative">
           <img
@@ -376,7 +376,7 @@ export function Projects() {
 
 export function Reviews() {
   return (
-    <section id="reviews" className="bg-surface py-10 sm:py-14 sm:py-20 lg:py-28">
+    <section id="reviews" className="bg-surface py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
           <div>
