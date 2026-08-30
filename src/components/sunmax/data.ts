@@ -35,7 +35,7 @@ export const stats = [
 export const equipment = [
   {
     title: "Solar Panels",
-    copy: "Tier-1 N-type TOPCon and bifacial modules from 545W to 770W, warehoused in Lahore and Karachi for same-week dispatch.",
+    copy: "Tier-1 N-type TOPCon and bifacial modules from 545W to 770W, warehoused in Lahore for same-week dispatch.",
     points: ["N-type TOPCon & HJT", "Up to 30-year warranty", "Bulk & project pricing"],
   },
   {

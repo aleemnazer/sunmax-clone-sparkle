@@ -155,6 +155,11 @@ export function About() {
           <h2 className="section-title text-foreground">
             Solar Products and Professional Services Across Pakistan
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Based in Lahore, we have completed installations in almost all major societies of the
+            city — including DHA, Bahria Town, Johar Town, Model Town, Wapda Town, Valencia,
+            Faisal Town, Gulberg and Lake City — and supply equipment nationwide.
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-2">
             {aboutTabs.map((t) => (
