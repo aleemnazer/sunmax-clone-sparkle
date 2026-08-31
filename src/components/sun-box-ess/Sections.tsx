@@ -4,14 +4,20 @@ import {
   BatteryCharging,
   Check,
   CircuitBoard,
+  Facebook,
+  Instagram,
+  Linkedin,
   Mail,
   MapPin,
+  MessageCircle,
   Phone,
   Quote,
   Star,
   Sun,
+  Youtube,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 import heroImg from "@/assets/hero-solar.jpg";
 import aboutImg from "@/assets/about-team.jpg";
 import panelImg from "@/assets/product-panel.jpg";
@@ -28,10 +34,15 @@ import {
   equipment,
   projects,
   services,
+  socialLinks,
   stats,
   team,
   testimonials,
+  whatsappUrl,
 } from "./data";
+
+const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin, YouTube: Youtube } as const;
+const salesWhatsAppNumber = "923218452143";
 
 function Eyebrow({ small, big }: { small: string; big: string }) {
   return (
@@ -484,28 +495,74 @@ export function Contact() {
 
           <ul className="mt-10 space-y-5">
             {[
-              { icon: Phone, label: "+92 321 8452143", sub: "Sales & support, 9am - 8pm" },
-              { icon: Mail, label: "sunmax.esolutions@gmail.com", sub: "Quotes within one working day" },
+              { icon: Phone, label: "+92 321 8452143", sub: "Sales & support, 9am - 8pm", href: "tel:+923218452143" },
+              {
+                icon: MessageCircle,
+                label: "WhatsApp",
+                sub: "Chat with our sales team",
+                href: whatsappUrl,
+              },
+              {
+                icon: Mail,
+                label: "sunmax.esolutions@gmail.com",
+                sub: "Quotes within one working day",
+                href: "mailto:sunmax.esolutions@gmail.com",
+              },
               { icon: MapPin, label: "Lahore", sub: "Warehouses and service centres across Punjab" },
-            ].map((c) => (
-              <li key={c.label} className="flex items-start gap-3 sm:gap-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-md bg-white/10">
-                  <c.icon className="size-5 text-primary" />
-                </span>
-                <div>
-                  <p className="font-display text-base font-bold uppercase text-ink-foreground sm:text-lg">
-                    {c.label}
-                  </p>
-                  <p className="text-sm text-ink-muted">{c.sub}</p>
-                </div>
-              </li>
-            ))}
+            ].map((c) => {
+              const content = (
+                <>
+                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-white/10">
+                    <c.icon className="size-5 text-primary" />
+                  </span>
+                  <div>
+                    <p className="font-display text-base font-bold uppercase text-ink-foreground sm:text-lg">
+                      {c.label}
+                    </p>
+                    <p className="text-sm text-ink-muted">{c.sub}</p>
+                  </div>
+                </>
+              );
+              return (
+                <li key={c.label} className="flex items-start gap-3 sm:gap-4">
+                  {c.href ? (
+                    <a
+                      href={c.href}
+                      target={c.href.startsWith("http") ? "_blank" : undefined}
+                      rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="flex items-start gap-3 sm:gap-4"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    content
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
 
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            const data = new FormData(e.currentTarget);
+            const lines = [
+              "Hi Sun Box ESS, I'd like a solar system quote.",
+              `Name: ${data.get("name")}`,
+              `Phone: ${data.get("phone")}`,
+            ];
+            const city = data.get("city");
+            if (city) lines.push(`City: ${city}`);
+            const units = data.get("units");
+            if (units) lines.push(`Monthly units: ${units} kWh`);
+            const message = data.get("message");
+            if (message) lines.push(`Details: ${message}`);
+            window.open(
+              `https://wa.me/${salesWhatsAppNumber}?text=${encodeURIComponent(lines.join("\n"))}`,
+              "_blank",
+              "noopener,noreferrer",
+            );
             setSent(true);
           }}
           className="rounded-lg border border-border bg-card p-6 shadow-card sm:p-8"
@@ -554,11 +611,11 @@ export function Contact() {
             />
           </label>
           <Button type="submit" variant="solar" size="lg" className="mt-6 w-full">
-            Request Quote <ArrowRight className="size-4" />
+            Get Quote on WhatsApp <MessageCircle className="size-4" />
           </Button>
           {sent && (
             <p className="mt-3 text-center text-sm font-medium text-foreground">
-              Thanks — our team will call you back shortly.
+              Opening WhatsApp in a new tab — just hit send.
             </p>
           )}
         </form>
@@ -573,11 +630,9 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-md bg-gradient-solar">
-              <Sun className="size-5 text-primary-foreground" strokeWidth={2.5} />
-            </span>
+            <img src={logo} alt="Sun Box ESS logo" width={36} height={36} className="size-9 rounded-md" />
             <span className="font-display text-2xl font-bold uppercase text-ink-foreground">
-              Sun<span className="text-primary">Max</span>
+              Sun<span className="text-primary">Box</span> ESS
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm">
@@ -585,6 +640,35 @@ export function SiteFooter() {
             complete solar systems for homes, businesses, industry and agriculture across
             Pakistan.
           </p>
+          <ul className="mt-5 flex items-center gap-2">
+            {socialLinks.map((s) => {
+              const Icon = socialIcons[s.name as keyof typeof socialIcons];
+              return (
+                <li key={s.name}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.name}
+                    className="grid size-9 place-items-center rounded-md bg-white/10 text-ink-muted transition-colors hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <Icon className="size-4" />
+                  </a>
+                </li>
+              );
+            })}
+            <li>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="grid size-9 place-items-center rounded-md bg-white/10 text-ink-muted transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <MessageCircle className="size-4" />
+              </a>
+            </li>
+          </ul>
         </div>
         <div>
           <p className="font-display text-sm font-bold uppercase tracking-widest text-ink-foreground">
@@ -610,7 +694,16 @@ export function SiteFooter() {
                 +92 321 8452143
               </a>
             </li>
-            <li>sunmax.esolutions@gmail.com</li>
+            <li>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:sunmax.esolutions@gmail.com" className="hover:text-primary">
+                sunmax.esolutions@gmail.com
+              </a>
+            </li>
             <li>Lahore, Punjab</li>
           </ul>
         </div>
@@ -619,5 +712,19 @@ export function SiteFooter() {
         &copy; {new Date().getFullYear()} Sun Box ESS. All rights reserved.
       </div>
     </footer>
+  );
+}
+
+export function WhatsAppFloatButton() {
+  return (
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with Sun Box ESS on WhatsApp"
+      className="fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+    >
+      <MessageCircle className="size-7" strokeWidth={2.25} />
+    </a>
   );
 }

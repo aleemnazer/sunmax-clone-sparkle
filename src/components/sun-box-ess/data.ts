@@ -166,3 +166,12 @@ export const brands = [
   "Smart Meters",
   "Monitoring",
 ];
+
+export const whatsappUrl = "https://wa.me/message/2U3DEGEVWVRPA1";
+
+export const socialLinks = [
+  { name: "Facebook", href: "https://facebook.com/share/18GTwR38hp" },
+  { name: "Instagram", href: "https://instagram.com/sunmax_energy_solutions" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/haiderali-143" },
+  { name: "YouTube", href: "https://www.youtube.com/@SunMaxEnergySolutions" },
+];

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, Phone, Sun, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const nav = [
   { label: "Home", href: "#home" },
@@ -31,9 +32,13 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-6 sm:py-4 sm:px-6">
         <a href="#home" className="flex items-center gap-2.5">
-          <span className="grid size-9 place-items-center rounded-md bg-gradient-solar shadow-solar">
-            <Sun className="size-5 text-primary-foreground" strokeWidth={2.5} />
-          </span>
+          <img
+            src={logo}
+            alt="Sun Box ESS logo"
+            width={40}
+            height={40}
+            className="size-9 rounded-md shadow-solar sm:size-10"
+          />
           <span className="font-display text-xl font-bold uppercase tracking-wide sm:text-2xl text-ink-foreground">
             Sun<span className="text-primary">Box</span> ESS
           </span>
