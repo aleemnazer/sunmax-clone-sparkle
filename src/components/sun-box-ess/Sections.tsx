@@ -17,7 +17,12 @@ import aboutImg from "@/assets/about-team.jpg";
 import panelImg from "@/assets/product-panel.jpg";
 import inverterImg from "@/assets/product-inverter.jpg";
 import batteryImg from "@/assets/product-battery.jpg";
-import projectImg from "@/assets/project-industrial.jpg";
+import projectTextileImg from "@/assets/project-textile.jpg";
+import projectRetailImg from "@/assets/project-retail.jpg";
+import projectTubewellImg from "@/assets/project-tubewell.jpg";
+import projectFuelStationImg from "@/assets/project-fuel-station.jpg";
+import projectResidentialImg from "@/assets/project-residential.jpg";
+import projectColdStorageImg from "@/assets/project-cold-storage.jpg";
 import {
   brands,
   equipment,
@@ -44,19 +49,19 @@ export function Hero() {
     <section id="home" className="relative isolate overflow-hidden bg-ink">
       <img
         src={heroImg}
-        alt="Rooftop solar panel array installed by SunMax on a commercial building"
+        alt="Rooftop solar panel array installed by Sun Box ESS on a commercial building"
         width={1920}
         height={1088}
         className="absolute inset-0 size-full object-cover opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
-        <p className="text-eyebrow">Welcome to SunMax</p>
+        <p className="text-eyebrow">Welcome to Sun Box ESS</p>
         <h1 className="mt-3 max-w-3xl text-[1.85rem] font-bold uppercase leading-[1.1] text-ink-foreground sm:mt-4 sm:text-5xl lg:text-6xl">
           Solar Equipment and Installation Services in Lahore &amp; Across Pakistan
         </h1>
         <p className="mt-5 max-w-2xl text-sm text-ink-muted sm:mt-6 sm:text-lg">
-          SunMax supplies Tier-1 solar panels, inverters and lithium batteries, and builds
+          Sun Box ESS supplies Tier-1 solar panels, inverters and lithium batteries, and builds
           complete systems for homes, businesses, industry and farms — from load audit to
           net metering.
         </p>
@@ -109,7 +114,7 @@ const aboutTabs = [
   {
     key: "who",
     label: "Who We Are",
-    copy: "SunMax is a Pakistan-based solar equipment supplier and system integrator. We stock panels, inverters, lithium batteries and balance-of-system components for residential, commercial, industrial and agricultural use, and deliver consultation, design, installation, grid connection and after-sales support.",
+    copy: "Sun Box ESS is a Pakistan-based solar equipment supplier and system integrator. We stock panels, inverters, lithium batteries and balance-of-system components for residential, commercial, industrial and agricultural use, and deliver consultation, design, installation, grid connection and after-sales support.",
     points: ["Tier-1 panels", "Premium inverters", "Lithium storage", "In-house EPC crews"],
   },
   {
@@ -136,7 +141,7 @@ export function About() {
         <div className="relative">
           <img
             src={aboutImg}
-            alt="SunMax technicians installing solar panels on a rooftop"
+            alt="Sun Box ESS technicians installing solar panels on a rooftop"
             loading="lazy"
             width={1024}
             height={1280}
@@ -196,7 +201,7 @@ export function About() {
 }
 
 const equipmentMedia = [
-  { img: panelImg, icon: Sun, alt: "Bifacial solar panel supplied by SunMax" },
+  { img: panelImg, icon: Sun, alt: "Bifacial solar panel supplied by Sun Box ESS" },
   { img: inverterImg, icon: CircuitBoard, alt: "Wall mounted hybrid solar inverter" },
   { img: batteryImg, icon: BatteryCharging, alt: "Lithium battery storage cabinet" },
 ];
@@ -206,7 +211,7 @@ export function Equipment() {
     <section id="equipment" className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <Eyebrow small="SunMax" big="Equipment" />
+          <Eyebrow small="Sun Box ESS" big="Equipment" />
           <h2 className="section-title text-foreground">Solar Equipment Trading</h2>
         </div>
 
@@ -266,7 +271,7 @@ export function Brands() {
     <section className="border-y border-border bg-surface py-10 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center">
-          <Eyebrow small="SunMax" big="Product Lines" />
+          <Eyebrow small="Sun Box ESS" big="Product Lines" />
           <h2 className="section-title text-foreground">Categories We Supply</h2>
         </div>
       </div>
@@ -316,6 +321,15 @@ export function Services() {
   );
 }
 
+const projectImages = [
+  projectTextileImg,
+  projectRetailImg,
+  projectTubewellImg,
+  projectFuelStationImg,
+  projectResidentialImg,
+  projectColdStorageImg,
+];
+
 export function Projects() {
   return (
     <section id="projects" className="bg-background py-14 sm:py-20 lg:py-28">
@@ -331,14 +345,14 @@ export function Projects() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
             <article
               key={p.title}
               className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-card"
             >
               <div className="aspect-4/3 overflow-hidden">
                 <img
-                  src={projectImg}
+                  src={projectImages[i]}
                   alt={`${p.title} — ${p.size} solar installation`}
                   loading="lazy"
                   width={1024}
@@ -471,7 +485,7 @@ export function Contact() {
           <ul className="mt-10 space-y-5">
             {[
               { icon: Phone, label: "+92 321 8452143", sub: "Sales & support, 9am - 8pm" },
-              { icon: Mail, label: "sales@sunmax.pk", sub: "Quotes within one working day" },
+              { icon: Mail, label: "sunmax.esolutions@gmail.com", sub: "Quotes within one working day" },
               { icon: MapPin, label: "Lahore", sub: "Warehouses and service centres across Punjab" },
             ].map((c) => (
               <li key={c.label} className="flex items-start gap-3 sm:gap-4">
@@ -567,7 +581,7 @@ export function SiteFooter() {
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm">
-            SunMax supplies Tier-1 solar panels, inverters and lithium storage, and builds
+            Sun Box ESS supplies Tier-1 solar panels, inverters and lithium storage, and builds
             complete solar systems for homes, businesses, industry and agriculture across
             Pakistan.
           </p>
@@ -596,13 +610,13 @@ export function SiteFooter() {
                 +92 321 8452143
               </a>
             </li>
-            <li>sales@sunmax.pk</li>
+            <li>sunmax.esolutions@gmail.com</li>
             <li>Lahore, Punjab</li>
           </ul>
         </div>
       </div>
       <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 px-4 pt-6 text-xs sm:px-6">
-        &copy; {new Date().getFullYear()} SunMax Energy. All rights reserved.
+        &copy; {new Date().getFullYear()} Sun Box ESS. All rights reserved.
       </div>
     </footer>
   );

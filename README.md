@@ -1,27 +1,16 @@
-# Sunmax Solar Clone
+# Sun Box ESS
 
-https://sunsolar.pk/
-clone this website for sunmax
+Marketing site for Sun Box ESS, a Lahore-based solar equipment supplier and installer.
 
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://sunmax-clone-sparkle.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/316b6072-edfa-4b56-85cf-d43025d58803).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+**Live site**: https://sunboxess.com
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need [Bun](https://bun.sh) installed.
 
 ```sh
 git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+cd sun-box-ess
+bun install
+bun run dev
 ```

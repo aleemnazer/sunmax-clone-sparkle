@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/sunmax/SiteHeader";
-import { RateTicker } from "@/components/sunmax/RateTicker";
+import { SiteHeader } from "@/components/sun-box-ess/SiteHeader";
+import { RateTicker } from "@/components/sun-box-ess/RateTicker";
 import {
   About,
   Brands,
@@ -13,12 +13,12 @@ import {
   SiteFooter,
   StatsBand,
   Team,
-} from "@/components/sunmax/Sections";
+} from "@/components/sun-box-ess/Sections";
 
-const SITE = "https://sunmax-clone-sparkle.lovable.app";
-const title = "SunMax Solar Lahore | Panels, Inverters & Installation";
+const SITE = "https://sunboxess.com";
+const title = "Sun Box ESS Solar Lahore | Panels, Inverters & Installation";
 const description =
-  "SunMax installs solar systems across Lahore — DHA, Bahria Town, Johar Town and more — supplying Tier-1 panels, inverters and lithium batteries. Call +92 321 8452143.";
+  "Sun Box ESS installs solar systems across Lahore — DHA, Bahria Town, Johar Town and more — supplying Tier-1 panels, inverters and lithium batteries. Call +92 321 8452143.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/` },
-      { property: "og:site_name", content: "SunMax Energy" },
+      { property: "og:site_name", content: "Sun Box ESS" },
       { property: "og:locale", content: "en_PK" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
@@ -42,11 +42,11 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "SunMax Energy",
+          name: "Sun Box ESS",
           description,
           url: `${SITE}/`,
           telephone: "+92 321 8452143",
-          email: "sales@sunmax.pk",
+          email: "sunmax.esolutions@gmail.com",
           priceRange: "$$",
           address: {
             "@type": "PostalAddress",

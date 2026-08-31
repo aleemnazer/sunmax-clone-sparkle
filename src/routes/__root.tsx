@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -37,9 +36,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,14 +73,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SunMax Energy | Solar Solutions in Lahore, Pakistan" },
+      { title: "Sun Box ESS | Solar Solutions in Lahore, Pakistan" },
       {
         name: "description",
         content:
-          "SunMax Energy supplies and installs solar panels, inverters and lithium batteries for homes, businesses and industry in Lahore and across Pakistan.",
+          "Sun Box ESS supplies and installs solar panels, inverters and lithium batteries for homes, businesses and industry in Lahore and across Pakistan.",
       },
-      { name: "author", content: "SunMax Energy" },
-      { property: "og:site_name", content: "SunMax Energy" },
+      { name: "author", content: "Sun Box ESS" },
+      { property: "og:site_name", content: "Sun Box ESS" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

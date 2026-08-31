@@ -35,7 +35,7 @@ export function SiteHeader() {
             <Sun className="size-5 text-primary-foreground" strokeWidth={2.5} />
           </span>
           <span className="font-display text-xl font-bold uppercase tracking-wide sm:text-2xl text-ink-foreground">
-            Sun<span className="text-primary">Max</span>
+            Sun<span className="text-primary">Box</span> ESS
           </span>
         </a>
 

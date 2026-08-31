@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://sunmax-clone-sparkle.lovable.app/sitemap.xml
+Sitemap: https://sunboxess.com/sitemap.xml

@@ -5,10 +5,10 @@ export type Rate = {
 };
 
 export const panelRates: Rate[] = [
-  { name: "SunMax Alpha 585W N-Type Bifacial", price: "38.50/w", trend: "up" },
-  { name: "SunMax Prime 620W Bifacial", price: "43.00/w", trend: "down" },
-  { name: "SunMax Prime 645W Bifacial", price: "43.00/w", trend: "down" },
-  { name: "SunMax Mono 640W", price: "45.00/w", trend: "down" },
+  { name: "Sun Box ESS Alpha 585W N-Type Bifacial", price: "38.50/w", trend: "up" },
+  { name: "Sun Box ESS Prime 620W Bifacial", price: "43.00/w", trend: "down" },
+  { name: "Sun Box ESS Prime 645W Bifacial", price: "43.00/w", trend: "down" },
+  { name: "Sun Box ESS Mono 640W", price: "45.00/w", trend: "down" },
   { name: "TOPCon N-Type 620W Bifacial", price: "42.00/w", trend: "down" },
   { name: "TOPCon N-Type 710W Bifacial", price: "42.00/w", trend: "up" },
   { name: "Tiger Neo 645W Bifacial", price: "42.00/w", trend: "down" },
