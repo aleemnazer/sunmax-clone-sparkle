@@ -175,7 +175,9 @@ export const brands = [
   "Monitoring",
 ];
 
-export const whatsappUrl = "https://wa.me/message/2U3DEGEVWVRPA1";
+export const whatsappUrl =
+  "https://wa.me/923218452143?text=" +
+  encodeURIComponent("Hi Sun Box ESS, I'd like to know more about solar systems.");
 
 export const socialLinks = [
   { name: "Facebook", href: "https://facebook.com/share/18GTwR38hp" },
