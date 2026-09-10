@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+# Blocks pushes if bun.lock is out of sync with package.json.
+# Cloudflare Workers Builds run `bun install --frozen-lockfile`, which fails
+# hard (breaking the deploy) if the lockfile doesn't exactly match
+# package.json. Catch that here, before it ever reaches Cloudflare.
+
+echo "Checking bun.lock is in sync with package.json..."
+
+if command -v bun >/dev/null 2>&1; then
+  BUN_INSTALL_CMD="bun install --frozen-lockfile"
+else
+  BUN_INSTALL_CMD="npx --yes bun@1.2.15 install --frozen-lockfile"
+fi
+
+if ! $BUN_INSTALL_CMD >/tmp/pre-push-bun-install.log 2>&1; then
+  echo ""
+  echo "bun.lock is out of sync with package.json — this would fail on Cloudflare."
+  echo "Run 'bun install' (without --frozen-lockfile), review the bun.lock diff, and commit it."
+  echo ""
+  cat /tmp/pre-push-bun-install.log
+  exit 1
+fi
+
+echo "bun.lock is in sync."
