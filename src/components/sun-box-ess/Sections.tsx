@@ -88,8 +88,8 @@ export function Hero() {
         </div>
         <dl className="mt-10 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-5 sm:mt-16 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-6">
           {[
-            ["1,400+", "Sites commissioned"],
-            ["420 MW", "Supplied annually"],
+            ["300+", "Sites commissioned"],
+            ["3 MW+", "Installed capacity"],
             ["30 yrs", "Panel warranty"],
             ["98%", "Client retention"],
           ].map(([v, l]) => (
@@ -384,8 +384,8 @@ export function Projects() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {[
-            ["12k+", "Happy customers", "Households and businesses running on systems we supplied and installed."],
-            ["250+", "Solar solutions", "Custom on-grid, hybrid and pumping designs delivered nationwide."],
+            ["300+", "Happy customers", "Households and businesses running on systems we supplied and installed."],
+            ["300+", "Solar solutions", "Custom on-grid, hybrid and pumping designs delivered nationwide."],
           ].map(([v, t, c]) => (
             <div key={t} className="rounded-lg border border-border bg-surface p-6 sm:p-8">
               <p className="font-display text-4xl font-bold text-primary">{v}</p>

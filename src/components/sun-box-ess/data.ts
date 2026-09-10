@@ -31,13 +31,13 @@ export const panelRates: Rate[] = [
 
 export const stats = [
   { value: "Since 2016", label: "Serving Pakistan" },
-  { value: "420 MW", label: "Annual Supply Volume" },
+  { value: "3 MW+", label: "Cumulative Installed Capacity" },
   { value: "30 Years", label: "Panel Performance Warranty" },
-  { value: "1,200+", label: "Systems Sold Monthly" },
-  { value: "5,100 kT", label: "Carbon Emissions Avoided" },
-  { value: "1,400+", label: "Sites Commissioned" },
+  { value: "15+", label: "Systems Installed Monthly" },
+  { value: "1,800+", label: "Tons of CO2 Avoided" },
+  { value: "300+", label: "Sites Commissioned" },
   { value: "98%", label: "Client Retention" },
-  { value: "Rs. 640M", label: "Lifetime Customer Savings" },
+  { value: "Rs. 40M+", label: "Lifetime Customer Savings" },
 ];
 
 export const equipment = [
@@ -88,33 +88,33 @@ export const services = [
 export const projects = [
   {
     sector: "Industrial Sector",
-    title: "Textile Processing Unit, Faisalabad",
-    size: "180 kW On-Grid",
+    title: "Small Workshop, Faisalabad",
+    size: "12 kW On-Grid",
   },
   {
     sector: "Commercial Sector",
-    title: "Retail Complex, Sheikhupura",
-    size: "127 kW On-Grid",
+    title: "Retail Store, Sheikhupura",
+    size: "10 kW On-Grid",
   },
   {
     sector: "Agricultural Sector",
-    title: "Tube-Well Cluster, Bahawalpur",
-    size: "75 kW Solar Pumping",
+    title: "Tube-Well, Bahawalpur",
+    size: "15 kW Solar Pumping",
   },
   {
     sector: "Commercial Sector",
     title: "Fuel Station, Lahore Ring Road",
-    size: "50 kW On-Grid",
+    size: "15 kW On-Grid",
   },
   {
     sector: "Residential Sector",
     title: "Private Residence, DHA Karachi",
-    size: "20 kW Hybrid",
+    size: "8 kW Hybrid",
   },
   {
     sector: "Industrial Sector",
-    title: "Cold Storage Facility, Multan",
-    size: "220 kW On-Grid",
+    title: "Cold Storage Unit, Multan",
+    size: "12 kW On-Grid",
   },
 ];
 
