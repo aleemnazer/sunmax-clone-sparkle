@@ -340,14 +340,16 @@ export function Services() {
   );
 }
 
-const projectImages = [
-  projectTextileImg,
-  projectRetailImg,
-  projectTubewellImg,
-  projectFuelStationImg,
-  projectResidentialImg,
-  projectColdStorageImg,
-];
+const projectImages: Record<string, string> = {
+  "Small Workshop, Faisalabad": projectTextileImg,
+  "Retail Store, Sheikhupura": projectRetailImg,
+  "Tube-Well, Bahawalpur": projectTubewellImg,
+  "Fuel Station, Lahore Ring Road": projectFuelStationImg,
+  "Private Residence, DHA Karachi": projectResidentialImg,
+  // NOTE: this photo carries a burned-in "Lake city meadows" caption — it belongs to the
+  // Multan hybrid project below, not Cold Storage Unit. Reassigned per client correction.
+  "Private Residence, Multan": projectColdStorageImg,
+};
 
 export function Projects() {
   return (
@@ -364,20 +366,27 @@ export function Projects() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
+          {projects.map((p) => (
             <article
               key={p.title}
               className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-card"
             >
               <div className="aspect-4/3 overflow-hidden">
-                <img
-                  src={projectImages[i]}
-                  alt={`${p.title} — ${p.size} solar installation`}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {projectImages[p.title] ? (
+                  <img
+                    src={projectImages[p.title]}
+                    alt={`${p.title} — ${p.size} solar installation`}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex size-full flex-col items-center justify-center gap-2 bg-surface text-muted-foreground">
+                    <Sun className="size-8" />
+                    <p className="text-xs uppercase tracking-widest">Photo coming soon</p>
+                  </div>
+                )}
               </div>
               <div className="p-5">
                 <p className="text-eyebrow">{p.sector}</p>

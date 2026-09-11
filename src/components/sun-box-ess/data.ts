@@ -116,6 +116,31 @@ export const projects = [
     title: "Cold Storage Unit, Multan",
     size: "12 kW On-Grid",
   },
+  {
+    sector: "Industrial Sector",
+    title: "Khurram Brothers, Saggian Pul, Lahore",
+    size: "50 kW On-Grid",
+  },
+  {
+    sector: "Institutional Sector",
+    title: "School Project",
+    size: "16 kW Hybrid",
+  },
+  {
+    sector: "Institutional Sector",
+    title: "Dharekay School",
+    size: "20 kW",
+  },
+  {
+    sector: "Residential Sector",
+    title: "Private Residence, DHA Phase 7",
+    size: "12 kW Hybrid",
+  },
+  {
+    sector: "Residential Sector",
+    title: "Private Residence, Multan",
+    size: "6 kW Hybrid",
+  },
 ];
 
 export const testimonials = [
@@ -158,10 +183,11 @@ export const testimonials = [
 ];
 
 export const team = [
-  { name: "Rehan Shahid", role: "Chief Executive Officer" },
+  { name: "Shahid Akram", role: "Chief Executive Officer" },
   { name: "Engr. Adeel Hasan", role: "Head of Projects" },
   { name: "Engr. Mujahid Ali", role: "Head of Sales" },
   { name: "Ayesha Yaseen", role: "Marketing Manager" },
+  { name: "Engr. Zahid Akram", role: "Team Member" },
 ];
 
 export const brands = [
