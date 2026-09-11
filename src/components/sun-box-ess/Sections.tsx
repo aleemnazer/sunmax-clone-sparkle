@@ -9,7 +9,6 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  MessageCircle,
   Phone,
   Quote,
   Star,
@@ -43,6 +42,15 @@ import {
 
 const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin, YouTube: Youtube } as const;
 const salesWhatsAppNumber = "923218452143";
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path d="M12.001 2c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.346 4.997L2 22l5.144-1.34a9.978 9.978 0 0 0 4.856 1.238h.004c5.514 0 9.996-4.483 9.996-9.998C21.997 6.483 17.515 2 12.001 2Zm0 18.156a8.153 8.153 0 0 1-4.157-1.14l-.297-.176-3.084.803.824-3.008-.194-.309a8.135 8.135 0 0 1-1.253-4.331c0-4.494 3.658-8.152 8.161-8.152 4.503 0 8.161 3.658 8.161 8.152 0 4.503-3.658 8.161-8.161 8.161Z" />
+    </svg>
+  );
+}
 
 function Eyebrow({ small, big }: { small: string; big: string }) {
   return (
@@ -497,7 +505,7 @@ export function Contact() {
             {[
               { icon: Phone, label: "+92 321 8452143", sub: "Sales & support, 9am - 8pm", href: "tel:+923218452143" },
               {
-                icon: MessageCircle,
+                icon: WhatsAppIcon,
                 label: "WhatsApp",
                 sub: "Chat with our sales team",
                 href: whatsappUrl,
@@ -611,7 +619,7 @@ export function Contact() {
             />
           </label>
           <Button type="submit" variant="solar" size="lg" className="mt-6 w-full">
-            Get Quote on WhatsApp <MessageCircle className="size-4" />
+            Get Quote on WhatsApp <WhatsAppIcon className="size-4" />
           </Button>
           {sent && (
             <p className="mt-3 text-center text-sm font-medium text-foreground">
@@ -665,7 +673,7 @@ export function SiteFooter() {
                 aria-label="WhatsApp"
                 className="grid size-9 place-items-center rounded-md bg-white/10 text-ink-muted transition-colors hover:bg-primary hover:text-primary-foreground"
               >
-                <MessageCircle className="size-4" />
+                <WhatsAppIcon className="size-4" />
               </a>
             </li>
           </ul>
@@ -724,7 +732,7 @@ export function WhatsAppFloatButton() {
       aria-label="Chat with Sun Box ESS on WhatsApp"
       className="fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
     >
-      <MessageCircle className="size-7" strokeWidth={2.25} />
+      <WhatsAppIcon className="size-7" />
     </a>
   );
 }
