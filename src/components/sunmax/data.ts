@@ -203,7 +203,7 @@ export const brands = [
 
 export const whatsappUrl =
   "https://wa.me/923218452143?text=" +
-  encodeURIComponent("Hi Sun Box ESS, I'd like to know more about solar systems.");
+  encodeURIComponent("Hi SunMax Energy Solutions, I'd like to know more about solar systems.");
 
 export const socialLinks = [
   { name: "Facebook", href: "https://facebook.com/share/18GTwR38hp" },

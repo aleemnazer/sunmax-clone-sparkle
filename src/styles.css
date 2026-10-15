@@ -103,16 +103,8 @@
   --up: oklch(0.62 0.17 145);
   --down: oklch(0.6 0.2 25);
 
-  --gradient-solar: linear-gradient(
-    100deg,
-    oklch(0.79 0.16 78) 0%,
-    oklch(0.72 0.18 55) 100%
-  );
-  --gradient-ink: linear-gradient(
-    160deg,
-    oklch(0.26 0.038 255) 0%,
-    oklch(0.19 0.03 258) 100%
-  );
+  --gradient-solar: linear-gradient(100deg, oklch(0.79 0.16 78) 0%, oklch(0.72 0.18 55) 100%);
+  --gradient-ink: linear-gradient(160deg, oklch(0.26 0.038 255) 0%, oklch(0.19 0.03 258) 100%);
   --shadow-card: 0 1px 2px oklch(0.21 0.03 250 / 0.06), 0 12px 32px oklch(0.21 0.03 250 / 0.08);
   --shadow-solar: 0 14px 34px oklch(0.76 0.166 68 / 0.32);
 
@@ -201,4 +193,3 @@
 @utility animate-marquee-fast {
   animation: marquee 28s linear infinite;
 }
-

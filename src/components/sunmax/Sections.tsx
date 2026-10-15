@@ -68,21 +68,21 @@ export function Hero() {
     <section id="home" className="relative isolate overflow-hidden bg-ink">
       <img
         src={heroImg}
-        alt="Rooftop solar panel array installed by Sun Box ESS on a commercial building"
+        alt="Rooftop solar panel array installed by SunMax Energy Solutions on a commercial building"
         width={1920}
         height={1088}
         className="absolute inset-0 size-full object-cover opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
-        <p className="text-eyebrow">Welcome to Sun Box ESS</p>
+        <p className="text-eyebrow">Welcome to SunMax Energy Solutions</p>
         <h1 className="mt-3 max-w-3xl text-[1.85rem] font-bold uppercase leading-[1.1] text-ink-foreground sm:mt-4 sm:text-5xl lg:text-6xl">
           Solar Equipment and Installation Services in Lahore &amp; Across Pakistan
         </h1>
         <p className="mt-5 max-w-2xl text-sm text-ink-muted sm:mt-6 sm:text-lg">
-          Sun Box ESS supplies Tier-1 solar panels, inverters and lithium batteries, and builds
-          complete systems for homes, businesses, industry and farms — from load audit to
-          net metering.
+          SunMax Energy Solutions supplies Tier-1 solar panels, inverters and lithium batteries, and
+          builds complete systems for homes, businesses, industry and farms — from load audit to net
+          metering.
         </p>
         <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
           <Button asChild variant="solar" size="lg" className="w-full sm:w-auto">
@@ -133,7 +133,7 @@ const aboutTabs = [
   {
     key: "who",
     label: "Who We Are",
-    copy: "Sun Box ESS is a Pakistan-based solar equipment supplier and system integrator. We stock panels, inverters, lithium batteries and balance-of-system components for residential, commercial, industrial and agricultural use, and deliver consultation, design, installation, grid connection and after-sales support.",
+    copy: "SunMax Energy Solutions is a Pakistan-based solar equipment supplier and system integrator. We stock panels, inverters, lithium batteries and balance-of-system components for residential, commercial, industrial and agricultural use, and deliver consultation, design, installation, grid connection and after-sales support.",
     points: ["Tier-1 panels", "Premium inverters", "Lithium storage", "In-house EPC crews"],
   },
   {
@@ -160,7 +160,7 @@ export function About() {
         <div className="relative">
           <img
             src={aboutImg}
-            alt="Sun Box ESS technicians installing solar panels on a rooftop"
+            alt="SunMax Energy Solutions technicians installing solar panels on a rooftop"
             loading="lazy"
             width={1024}
             height={1280}
@@ -181,8 +181,8 @@ export function About() {
           </h2>
           <p className="mt-4 text-muted-foreground">
             Based in Lahore, we have completed installations in almost all major societies of the
-            city — including DHA, Bahria Town, Johar Town, Model Town, Wapda Town, Valencia,
-            Faisal Town, Gulberg and Lake City — and supply equipment nationwide.
+            city — including DHA, Bahria Town, Johar Town, Model Town, Wapda Town, Valencia, Faisal
+            Town, Gulberg and Lake City — and supply equipment nationwide.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-2">
@@ -220,7 +220,7 @@ export function About() {
 }
 
 const equipmentMedia = [
-  { img: panelImg, icon: Sun, alt: "Bifacial solar panel supplied by Sun Box ESS" },
+  { img: panelImg, icon: Sun, alt: "Bifacial solar panel supplied by SunMax Energy Solutions" },
   { img: inverterImg, icon: CircuitBoard, alt: "Wall mounted hybrid solar inverter" },
   { img: batteryImg, icon: BatteryCharging, alt: "Lithium battery storage cabinet" },
 ];
@@ -230,7 +230,7 @@ export function Equipment() {
     <section id="equipment" className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <Eyebrow small="Sun Box ESS" big="Equipment" />
+          <Eyebrow small="SunMax" big="Equipment" />
           <h2 className="section-title text-foreground">Solar Equipment Trading</h2>
         </div>
 
@@ -290,7 +290,7 @@ export function Brands() {
     <section className="border-y border-border bg-surface py-10 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center">
-          <Eyebrow small="Sun Box ESS" big="Product Lines" />
+          <Eyebrow small="SunMax" big="Product Lines" />
           <h2 className="section-title text-foreground">Categories We Supply</h2>
         </div>
       </div>
@@ -401,8 +401,16 @@ export function Projects() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {[
-            ["300+", "Happy customers", "Households and businesses running on systems we supplied and installed."],
-            ["300+", "Solar solutions", "Custom on-grid, hybrid and pumping designs delivered nationwide."],
+            [
+              "300+",
+              "Happy customers",
+              "Households and businesses running on systems we supplied and installed.",
+            ],
+            [
+              "300+",
+              "Solar solutions",
+              "Custom on-grid, hybrid and pumping designs delivered nationwide.",
+            ],
           ].map(([v, t, c]) => (
             <div key={t} className="rounded-lg border border-border bg-surface p-6 sm:p-8">
               <p className="font-display text-4xl font-bold text-primary">{v}</p>
@@ -506,13 +514,18 @@ export function Contact() {
           <p className="text-eyebrow">Contact</p>
           <h2 className="section-title mt-3 text-ink-foreground">Get a System Quote</h2>
           <p className="mt-4 max-w-lg text-ink-muted">
-            Share your monthly units and roof area and our engineers will send a sized proposal
-            with equipment, pricing and expected payback.
+            Share your monthly units and roof area and our engineers will send a sized proposal with
+            equipment, pricing and expected payback.
           </p>
 
           <ul className="mt-10 space-y-5">
             {[
-              { icon: Phone, label: "+92 321 8452143", sub: "Sales & support, 9am - 8pm", href: "tel:+923218452143" },
+              {
+                icon: Phone,
+                label: "+92 321 8452143",
+                sub: "Sales & support, 9am - 8pm",
+                href: "tel:+923218452143",
+              },
               {
                 icon: WhatsAppIcon,
                 label: "WhatsApp",
@@ -525,7 +538,11 @@ export function Contact() {
                 sub: "Quotes within one working day",
                 href: "mailto:sunmax.esolutions@gmail.com",
               },
-              { icon: MapPin, label: "Lahore", sub: "Warehouses and service centres across Punjab" },
+              {
+                icon: MapPin,
+                label: "Lahore",
+                sub: "Warehouses and service centres across Punjab",
+              },
             ].map((c) => {
               const content = (
                 <>
@@ -565,7 +582,7 @@ export function Contact() {
             e.preventDefault();
             const data = new FormData(e.currentTarget);
             const lines = [
-              "Hi Sun Box ESS, I'd like a solar system quote.",
+              "Hi SunMax Energy Solutions, I'd like a solar system quote.",
               `Name: ${data.get("name")}`,
               `Phone: ${data.get("phone")}`,
             ];
@@ -647,14 +664,20 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
-            <img src={logo} alt="Sun Box ESS logo" width={36} height={36} className="size-9 rounded-md" />
+            <img
+              src={logo}
+              alt="SunMax Energy Solutions logo"
+              width={36}
+              height={36}
+              className="size-9 rounded-md"
+            />
             <span className="font-display text-2xl font-bold uppercase text-ink-foreground">
-              Sun<span className="text-primary">Box</span> ESS
+              Sun<span className="text-primary">Max</span>
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm">
-            Sun Box ESS supplies Tier-1 solar panels, inverters and lithium storage, and builds
-            complete solar systems for homes, businesses, industry and agriculture across
+            SunMax Energy Solutions supplies Tier-1 solar panels, inverters and lithium storage, and
+            builds complete solar systems for homes, businesses, industry and agriculture across
             Pakistan.
           </p>
           <ul className="mt-5 flex items-center gap-2">
@@ -712,7 +735,12 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary"
+              >
                 WhatsApp
               </a>
             </li>
@@ -726,7 +754,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 px-4 pt-6 text-xs sm:px-6">
-        &copy; {new Date().getFullYear()} Sun Box ESS. All rights reserved.
+        &copy; {new Date().getFullYear()} SunMax Energy Solutions. All rights reserved.
       </div>
     </footer>
   );
@@ -738,7 +766,7 @@ export function WhatsAppFloatButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Sun Box ESS on WhatsApp"
+      aria-label="Chat with SunMax Energy Solutions on WhatsApp"
       className="fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
     >
       <WhatsAppIcon className="size-7" />

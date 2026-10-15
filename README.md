@@ -1,8 +1,8 @@
-# Sun Box ESS
+# SunMax Energy Solutions
 
-Marketing site for Sun Box ESS, a Lahore-based solar equipment supplier and installer.
+Marketing site for SunMax Energy Solutions, a Lahore-based solar equipment supplier and installer.
 
-**Live site**: https://sunboxess.com
+**Live site**: https://sunmaxpk.com
 
 ## Development
 
@@ -10,7 +10,7 @@ You need [Bun](https://bun.sh) installed.
 
 ```sh
 git clone <this-repository-url>
-cd sun-box-ess
+cd sunmax
 bun install
 git config core.hooksPath .githooks
 bun run dev
