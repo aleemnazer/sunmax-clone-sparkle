@@ -1,0 +1,538 @@
+// Real SunMax installations supplied by the client (projects.json, 2026-10-17).
+// Values are copied verbatim and kept in the client's display order. Do not edit by hand
+// without the client's sign-off.
+
+export type Sector = "Residential" | "Industrial" | "Commercial" | "Institutional";
+
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  orientation: "portrait" | "landscape";
+};
+
+export type Project = {
+  id: string;
+  order: number;
+  title: string;
+  displayTitle: string;
+  location: { area: string | null; city: string; display: string };
+  sector: Sector;
+  capacityKw: number | null;
+  systemType: "On-Grid" | "Hybrid" | null;
+  systemLabel: string | null;
+  storage: string | null;
+  inverter: string | null;
+  systemNote: string | null;
+  equipmentOnSite: string | null;
+  imageCount: number;
+  images: ProjectImage[];
+};
+
+const assetUrls = import.meta.glob<string>("../../assets/projects/*.webp", {
+  eager: true,
+  import: "default",
+});
+
+function asset(file: string): string {
+  const url = assetUrls[`../../assets/projects/${file}`];
+  if (!url) throw new Error(`Missing project image: ${file}`);
+  return url;
+}
+
+export const projects: Project[] = [
+  {
+    id: "mughal-pipe-industry-gujranwala",
+    order: 1,
+    title: "Mughal Pipe Industry",
+    displayTitle: "Mughal Pipe Industry, Gujranwala",
+    location: { area: null, city: "Gujranwala", display: "Gujranwala" },
+    sector: "Industrial",
+    capacityKw: 110,
+    systemType: "On-Grid",
+    systemLabel: "110 kW On-Grid",
+    storage: null,
+    inverter: "Inverex NitroX 110 kW, 3-phase",
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 4,
+    images: [
+      {
+        src: asset("mughal-pipe-industry-gujranwala-1.webp"),
+        alt: "Elevated solar rows across the Mughal Pipe Industry factory roof",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("mughal-pipe-industry-gujranwala-2.webp"),
+        alt: "Rooftop solar array at Mughal Pipe Industry, Gujranwala",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("mughal-pipe-industry-gujranwala-3.webp"),
+        alt: "110 kW on-grid panel rows with service aisle",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("mughal-pipe-industry-gujranwala-4.webp"),
+        alt: "Inverex NitroX 110 kW three-phase inverter",
+        width: 1600,
+        height: 1200,
+        orientation: "landscape",
+      },
+    ],
+  },
+  {
+    id: "berger-paints-lahore",
+    order: 2,
+    title: "Berger Paints",
+    displayTitle: "Berger Paints, Lahore",
+    location: { area: null, city: "Lahore", display: "Lahore" },
+    sector: "Industrial",
+    capacityKw: 60,
+    systemType: null,
+    systemLabel: "60 kW",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 4,
+    images: [
+      {
+        src: asset("berger-paints-lahore-1.webp"),
+        alt: "Berger Paints plant building, Lahore",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("berger-paints-lahore-2.webp"),
+        alt: "Solar carport arrays seen from the Berger Paints plant roof",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("berger-paints-lahore-3.webp"),
+        alt: "SunMax installation crew in safety gear under the solar carport",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("berger-paints-lahore-4.webp"),
+        alt: "Two commissioned string inverters at Berger Paints, Lahore",
+        width: 1600,
+        height: 1200,
+        orientation: "landscape",
+      },
+    ],
+  },
+  {
+    id: "berger-paints-karachi",
+    order: 3,
+    title: "Berger Paints",
+    displayTitle: "Berger Paints, Karachi",
+    location: { area: null, city: "Karachi", display: "Karachi" },
+    sector: "Industrial",
+    capacityKw: 50,
+    systemType: "On-Grid",
+    systemLabel: "50 kW On-Grid",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 4,
+    images: [
+      {
+        src: asset("berger-paints-karachi-1.webp"),
+        alt: "SunMax technicians installing inverters at the Berger Paints plant, Karachi",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("berger-paints-karachi-2.webp"),
+        alt: "Crew in safety gear installing panels on the factory roof",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("berger-paints-karachi-3.webp"),
+        alt: "SunMax installation team under the solar carport structure",
+        width: 1600,
+        height: 1200,
+        orientation: "landscape",
+      },
+      {
+        src: asset("berger-paints-karachi-4.webp"),
+        alt: "Railed maintenance walkway between rooftop solar arrays",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "zam-zam-lpg-plant-gujranwala",
+    order: 4,
+    title: "Zam Zam LPG Plant",
+    displayTitle: "Zam Zam LPG Plant, Gujranwala",
+    location: { area: null, city: "Gujranwala", display: "Gujranwala" },
+    sector: "Industrial",
+    capacityKw: 50,
+    systemType: "On-Grid",
+    systemLabel: "50 kW On-Grid",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 4,
+    images: [
+      {
+        src: asset("zam-zam-lpg-plant-gujranwala-1.webp"),
+        alt: "Tilted rooftop solar rows overlooking the LPG tanker yard",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("zam-zam-lpg-plant-gujranwala-2.webp"),
+        alt: "Long rows of panels on galvanised mounting frames",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("zam-zam-lpg-plant-gujranwala-3.webp"),
+        alt: "Site review on the finished 50 kW array",
+        width: 1600,
+        height: 1200,
+        orientation: "landscape",
+      },
+      {
+        src: asset("zam-zam-lpg-plant-gujranwala-4.webp"),
+        alt: "SunMax team on site at Zam Zam LPG Plant",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "kb-brothers-factory-lahore",
+    order: 5,
+    title: "K&B Brothers Factory",
+    displayTitle: "K&B Brothers Factory, Lahore",
+    location: { area: null, city: "Lahore", display: "Lahore" },
+    sector: "Industrial",
+    capacityKw: 50,
+    systemType: "On-Grid",
+    systemLabel: "50 kW On-Grid",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 4,
+    images: [
+      {
+        src: asset("kb-brothers-factory-lahore-1.webp"),
+        alt: "Rooftop arrays with a steel cleaning walkway down the centre",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("kb-brothers-factory-lahore-2.webp"),
+        alt: "Welders fabricating the walkway ladder on site",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("kb-brothers-factory-lahore-3.webp"),
+        alt: "Rooftop solar array, K&B Brothers factory",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("kb-brothers-factory-lahore-4.webp"),
+        alt: "Inverter room with protection panels",
+        width: 1600,
+        height: 1200,
+        orientation: "landscape",
+      },
+    ],
+  },
+  {
+    id: "lahore-timber-market",
+    order: 6,
+    title: "Lahore Timber Market",
+    displayTitle: "Lahore Timber Market",
+    location: { area: null, city: "Lahore", display: "Lahore" },
+    sector: "Commercial",
+    capacityKw: 50,
+    systemType: null,
+    systemLabel: "50 kW",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: "Growatt, Solis and Sunflx inverters",
+    imageCount: 4,
+    images: [
+      {
+        src: asset("lahore-timber-market-1.webp"),
+        alt: "Elevated solar structure leaving the roof usable below",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("lahore-timber-market-2.webp"),
+        alt: "Braced steel frame carrying the solar array",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("lahore-timber-market-3.webp"),
+        alt: "Technicians wiring the underside of the elevated frame",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("lahore-timber-market-4.webp"),
+        alt: "Growatt, Solis and Sunflx inverters with protection boards",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "private-residence-dha-lahore",
+    order: 7,
+    title: "Private Residence",
+    displayTitle: "Private Residence, DHA, Lahore",
+    location: { area: "DHA", city: "Lahore", display: "DHA, Lahore" },
+    sector: "Residential",
+    capacityKw: 20,
+    systemType: null,
+    systemLabel: "20 kW",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 3,
+    images: [
+      {
+        src: asset("private-residence-dha-lahore-1.webp"),
+        alt: "Tilted rooftop array with copper lightning arrester",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("private-residence-dha-lahore-2.webp"),
+        alt: "Elevated arrays with steel access walkway",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("private-residence-dha-lahore-3.webp"),
+        alt: "Walkway built for safe panel cleaning",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "rehman-brothers-industries-lahore",
+    order: 8,
+    title: "Rehman Brothers Industries",
+    displayTitle: "Rehman Brothers Industries, Multan Road, Lahore",
+    location: { area: "Multan Road", city: "Lahore", display: "Multan Road, Lahore" },
+    sector: "Industrial",
+    capacityKw: 50,
+    systemType: "On-Grid",
+    systemLabel: "50 kW On-Grid",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 2,
+    images: [
+      {
+        src: asset("rehman-brothers-industries-lahore-1.webp"),
+        alt: "Elevated steel structure carrying the 50 kW on-grid array at Rehman Brothers Industries",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("rehman-brothers-industries-lahore-2.webp"),
+        alt: "SunMax crew completing the top rows of the elevated frame",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "private-residence-dc-colony-gujranwala",
+    order: 9,
+    title: "Private Residence",
+    displayTitle: "Private Residence, DC Colony, Gujranwala",
+    location: { area: "DC Colony", city: "Gujranwala", display: "DC Colony, Gujranwala" },
+    sector: "Residential",
+    capacityKw: 20,
+    systemType: "Hybrid",
+    systemLabel: "20 kW Hybrid",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: null,
+    imageCount: 2,
+    images: [
+      {
+        src: asset("private-residence-dc-colony-gujranwala-1.webp"),
+        alt: "Flat-roof solar array on a raised steel frame, SunMax crew fixing module clamps",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("private-residence-dc-colony-gujranwala-2.webp"),
+        alt: "Twin rows of solar panels over the stairwell, final module alignment",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "private-residence-dha-phase-7-lahore",
+    order: 10,
+    title: "Private Residence",
+    displayTitle: "Private Residence, DHA Phase 7, Lahore",
+    location: { area: "DHA Phase 7", city: "Lahore", display: "DHA Phase 7, Lahore" },
+    sector: "Residential",
+    capacityKw: 15,
+    systemType: "Hybrid",
+    systemLabel: "15 kW Hybrid",
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: "Dyness lithium battery cabinets x2, CEC protection",
+    imageCount: 2,
+    images: [
+      {
+        src: asset("private-residence-dha-phase-7-lahore-1.webp"),
+        alt: "15 kW hybrid inverter with two Dyness lithium battery cabinets installed under a staircase",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("private-residence-dha-phase-7-lahore-2.webp"),
+        alt: "Handover at the finished hybrid system",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "dar-e-arqam-schools-head-office-lahore",
+    order: 11,
+    title: "Dar-e-Arqam Schools, Head Office",
+    displayTitle: "Dar-e-Arqam Schools, Head Office, Lahore",
+    location: { area: null, city: "Lahore", display: "Lahore" },
+    sector: "Institutional",
+    capacityKw: null,
+    systemType: null,
+    systemLabel: null,
+    storage: null,
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: "Inverex inverters x2 with wall-mount batteries",
+    imageCount: 2,
+    images: [
+      {
+        src: asset("dar-e-arqam-schools-head-office-lahore-1.webp"),
+        alt: "Two Inverex inverters and wall batteries with dedicated protection",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+      {
+        src: asset("dar-e-arqam-schools-head-office-lahore-2.webp"),
+        alt: "Inverter room powered on with protection panels live",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "private-residence-sui-gas-society-lahore",
+    order: 12,
+    title: "Private Residence",
+    displayTitle: "Private Residence, Sui Gas Society, Lahore",
+    location: { area: "Sui Gas Society", city: "Lahore", display: "Sui Gas Society, Lahore" },
+    sector: "Residential",
+    capacityKw: 20,
+    systemType: "Hybrid",
+    systemLabel: "20 kW Hybrid",
+    storage: "40 kWh lithium bank",
+    inverter: null,
+    systemNote: null,
+    equipmentOnSite: "Sunpok LiFePO4 battery, CEC protection",
+    imageCount: 1,
+    images: [
+      {
+        src: asset("private-residence-sui-gas-society-lahore-1.webp"),
+        alt: "20 kW hybrid inverter with Sunpok LiFePO4 battery storage",
+        width: 1200,
+        height: 1600,
+        orientation: "portrait",
+      },
+    ],
+  },
+  {
+    id: "private-residence-sa-garden-lahore",
+    order: 13,
+    title: "Private Residence",
+    displayTitle: "Private Residence, SA Garden, Lahore",
+    location: { area: "SA Garden", city: "Lahore", display: "SA Garden, Lahore" },
+    sector: "Residential",
+    capacityKw: 15,
+    systemType: "Hybrid",
+    systemLabel: "15 kW Hybrid",
+    storage: null,
+    inverter: null,
+    systemNote: "Tesla",
+    equipmentOnSite: "5 kWh wall battery, CEC protection",
+    imageCount: 1,
+    images: [
+      {
+        src: asset("private-residence-sa-garden-lahore-1.webp"),
+        alt: "Wall-mounted hybrid inverter with 5 kWh battery and DC/AC protection boxes",
+        width: 1600,
+        height: 1200,
+        orientation: "landscape",
+      },
+    ],
+  },
+];
