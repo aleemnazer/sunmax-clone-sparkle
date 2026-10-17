@@ -85,64 +85,6 @@ export const services = [
   },
 ];
 
-export const projects = [
-  {
-    sector: "Industrial Sector",
-    title: "Small Workshop, Faisalabad",
-    size: "12 kW On-Grid",
-  },
-  {
-    sector: "Commercial Sector",
-    title: "Retail Store, Sheikhupura",
-    size: "10 kW On-Grid",
-  },
-  {
-    sector: "Agricultural Sector",
-    title: "Tube-Well, Bahawalpur",
-    size: "15 kW Solar Pumping",
-  },
-  {
-    sector: "Commercial Sector",
-    title: "Fuel Station, Lahore Ring Road",
-    size: "15 kW On-Grid",
-  },
-  {
-    sector: "Residential Sector",
-    title: "Private Residence, DHA Karachi",
-    size: "8 kW Hybrid",
-  },
-  {
-    sector: "Industrial Sector",
-    title: "Cold Storage Unit, Multan",
-    size: "12 kW On-Grid",
-  },
-  {
-    sector: "Industrial Sector",
-    title: "Khurram Brothers, Saggian Pul, Lahore",
-    size: "50 kW On-Grid",
-  },
-  {
-    sector: "Institutional Sector",
-    title: "School Project",
-    size: "16 kW Hybrid",
-  },
-  {
-    sector: "Institutional Sector",
-    title: "Dharekay School",
-    size: "20 kW",
-  },
-  {
-    sector: "Residential Sector",
-    title: "Private Residence, DHA Phase 7",
-    size: "12 kW Hybrid",
-  },
-  {
-    sector: "Residential Sector",
-    title: "Private Residence, Multan",
-    size: "6 kW Hybrid",
-  },
-];
-
 export const testimonials = [
   {
     quote:

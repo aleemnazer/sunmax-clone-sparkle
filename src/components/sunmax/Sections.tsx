@@ -3,6 +3,7 @@ import {
   ArrowRight,
   BatteryCharging,
   Check,
+  Images,
   CircuitBoard,
   Facebook,
   Instagram,
@@ -22,16 +23,9 @@ import aboutImg from "@/assets/about-team.jpg";
 import panelImg from "@/assets/product-panel.jpg";
 import inverterImg from "@/assets/product-inverter.jpg";
 import batteryImg from "@/assets/product-battery.jpg";
-import projectTextileImg from "@/assets/project-textile.jpg";
-import projectRetailImg from "@/assets/project-retail.jpg";
-import projectTubewellImg from "@/assets/project-tubewell.jpg";
-import projectFuelStationImg from "@/assets/project-fuel-station.jpg";
-import projectResidentialImg from "@/assets/project-residential.jpg";
-import projectColdStorageImg from "@/assets/project-cold-storage.jpg";
 import {
   brands,
   equipment,
-  projects,
   services,
   socialLinks,
   stats,
@@ -39,6 +33,8 @@ import {
   testimonials,
   whatsappUrl,
 } from "./data";
+import { projects, type Project } from "./projects";
+import { ProjectGallery } from "./ProjectGallery";
 
 const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin, YouTube: Youtube } as const;
 const salesWhatsAppNumber = "923218452143";
@@ -340,18 +336,61 @@ export function Services() {
   );
 }
 
-const projectImages: Record<string, string> = {
-  "Small Workshop, Faisalabad": projectTextileImg,
-  "Retail Store, Sheikhupura": projectRetailImg,
-  "Tube-Well, Bahawalpur": projectTubewellImg,
-  "Fuel Station, Lahore Ring Road": projectFuelStationImg,
-  "Private Residence, DHA Karachi": projectResidentialImg,
-  // NOTE: this photo carries a burned-in "Lake city meadows" caption — it belongs to the
-  // Multan hybrid project below, not Cold Storage Unit. Reassigned per client correction.
-  "Private Residence, Multan": projectColdStorageImg,
-};
+// Cards in the first grid row (3 on desktop) load eagerly; the rest are lazy.
+const EAGER_PROJECT_CARDS = 3;
+
+function ProjectCard({
+  project,
+  eager,
+  onOpen,
+}: {
+  project: Project;
+  eager: boolean;
+  onOpen: () => void;
+}) {
+  const cover = project.images[0];
+  return (
+    <article className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-card">
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-haspopup="dialog"
+        className="block w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      >
+        <div className="relative aspect-4/3 overflow-hidden bg-surface">
+          {cover && (
+            <img
+              src={cover.src}
+              alt={cover.alt}
+              loading={eager ? "eager" : "lazy"}
+              width={cover.width}
+              height={cover.height}
+              className="size-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
+          )}
+          {project.imageCount > 1 && (
+            <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-md bg-foreground/75 px-2 py-1 text-xs font-semibold text-background backdrop-blur-sm">
+              <Images className="size-3.5" aria-hidden="true" />
+              {project.imageCount} photos
+            </span>
+          )}
+        </div>
+        <div className="p-5">
+          <p className="text-eyebrow">{project.sector} Sector</p>
+          <h3 className="mt-2 font-display text-lg font-bold uppercase text-foreground">
+            {project.displayTitle}
+          </h3>
+          {project.systemLabel !== null && (
+            <p className="mt-1 text-sm text-muted-foreground">{project.systemLabel}</p>
+          )}
+        </div>
+      </button>
+    </article>
+  );
+}
 
 export function Projects() {
+  const [selected, setSelected] = useState<Project | null>(null);
   return (
     <section id="projects" className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -366,38 +405,19 @@ export function Projects() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <article
-              key={p.title}
-              className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-card"
-            >
-              <div className="aspect-4/3 overflow-hidden">
-                {projectImages[p.title] ? (
-                  <img
-                    src={projectImages[p.title]}
-                    alt={`${p.title} — ${p.size} solar installation`}
-                    loading="lazy"
-                    width={1024}
-                    height={1024}
-                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="flex size-full flex-col items-center justify-center gap-2 bg-surface text-muted-foreground">
-                    <Sun className="size-8" />
-                    <p className="text-xs uppercase tracking-widest">Photo coming soon</p>
-                  </div>
-                )}
-              </div>
-              <div className="p-5">
-                <p className="text-eyebrow">{p.sector}</p>
-                <h3 className="mt-2 font-display text-lg font-bold uppercase text-foreground">
-                  {p.title}
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground">{p.size}</p>
-              </div>
-            </article>
+          {projects.map((p, i) => (
+            <ProjectCard
+              key={p.id}
+              project={p}
+              eager={i < EAGER_PROJECT_CARDS}
+              onOpen={() => setSelected(p)}
+            />
           ))}
         </div>
+
+        {selected && (
+          <ProjectGallery key={selected.id} project={selected} onClose={() => setSelected(null)} />
+        )}
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {[
