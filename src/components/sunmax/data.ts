@@ -148,8 +148,8 @@ export const whatsappUrl =
   encodeURIComponent("Hi SunMax Energy Solutions, I'd like to know more about solar systems.");
 
 export const socialLinks = [
-  { name: "Facebook", href: "https://facebook.com/share/18GTwR38hp" },
+  { name: "Facebook", href: "https://web.facebook.com/SunmaxSolarEnergySolution" },
   { name: "Instagram", href: "https://instagram.com/sunmax_energy_solutions" },
   { name: "LinkedIn", href: "https://linkedin.com/in/haiderali-143" },
-  { name: "YouTube", href: "https://www.youtube.com/@SunMaxEnergySolutions" },
+  { name: "YouTube", href: "https://www.youtube.com/@sunmaxenergysolutions" },
 ];
