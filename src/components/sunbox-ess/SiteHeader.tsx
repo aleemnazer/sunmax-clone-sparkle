@@ -34,13 +34,13 @@ export function SiteHeader() {
         <a href="#home" className="flex items-center gap-2.5">
           <img
             src={logo}
-            alt="SunMax Energy Solutions logo"
+            alt="SunBox ESS logo"
             width={40}
             height={40}
             className="size-9 rounded-md shadow-solar sm:size-10"
           />
           <span className="font-display text-xl font-bold uppercase tracking-wide sm:text-2xl text-ink-foreground">
-            Sun<span className="text-primary">Max</span>
+            Sun<span className="text-primary">Box</span> ESS
           </span>
         </a>
 

@@ -30,7 +30,7 @@ export default defineConfig(async ({ command }) => {
     plugins.push(
       nitro({
         preset: "cloudflare-module",
-        // Worker name predates the SunMax rebrand; Workers Builds and the custom domains are bound to it.
+        // Worker name matches the domain; Workers Builds and the custom domains are bound to it.
         cloudflare: { wrangler: { name: "sunboxess" } },
       }),
     );

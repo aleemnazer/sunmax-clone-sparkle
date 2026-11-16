@@ -1,4 +1,4 @@
-// Real SunMax installations supplied by the client (projects.json, 2026-10-17).
+// Real SunBox ESS installations supplied by the client (projects.json, 2026-10-17).
 // Values are copied verbatim and kept in the client's display order. Do not edit by hand
 // without the client's sign-off.
 
@@ -120,7 +120,7 @@ export const projects: Project[] = [
       },
       {
         src: asset("berger-paints-lahore-3.webp"),
-        alt: "SunMax installation crew in safety gear under the solar carport",
+        alt: "SunBox ESS installation crew in safety gear under the solar carport",
         width: 1200,
         height: 1600,
         orientation: "portrait",
@@ -152,7 +152,7 @@ export const projects: Project[] = [
     images: [
       {
         src: asset("berger-paints-karachi-1.webp"),
-        alt: "SunMax technicians installing inverters at the Berger Paints plant, Karachi",
+        alt: "SunBox ESS technicians installing inverters at the Berger Paints plant, Karachi",
         width: 1200,
         height: 1600,
         orientation: "portrait",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
       },
       {
         src: asset("berger-paints-karachi-3.webp"),
-        alt: "SunMax installation team under the solar carport structure",
+        alt: "SunBox ESS installation team under the solar carport structure",
         width: 1600,
         height: 1200,
         orientation: "landscape",
@@ -219,7 +219,7 @@ export const projects: Project[] = [
       },
       {
         src: asset("zam-zam-lpg-plant-gujranwala-4.webp"),
-        alt: "SunMax team on site at Zam Zam LPG Plant",
+        alt: "SunBox ESS team on site at Zam Zam LPG Plant",
         width: 1200,
         height: 1600,
         orientation: "portrait",
@@ -382,7 +382,7 @@ export const projects: Project[] = [
       },
       {
         src: asset("rehman-brothers-industries-lahore-2.webp"),
-        alt: "SunMax crew completing the top rows of the elevated frame",
+        alt: "SunBox ESS crew completing the top rows of the elevated frame",
         width: 1200,
         height: 1600,
         orientation: "portrait",
@@ -407,7 +407,7 @@ export const projects: Project[] = [
     images: [
       {
         src: asset("private-residence-dc-colony-gujranwala-1.webp"),
-        alt: "Flat-roof solar array on a raised steel frame, SunMax crew fixing module clamps",
+        alt: "Flat-roof solar array on a raised steel frame, SunBox ESS crew fixing module clamps",
         width: 1200,
         height: 1600,
         orientation: "portrait",

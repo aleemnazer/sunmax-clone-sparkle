@@ -10,7 +10,7 @@ import {
 import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { WhatsAppFloatButton } from "@/components/sunmax/Sections";
+import { WhatsAppFloatButton } from "@/components/sunbox-ess/Sections";
 
 function NotFoundComponent() {
   return (
@@ -74,14 +74,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SunMax Energy Solutions | Solar Solutions in Lahore, Pakistan" },
+      { title: "SunBox ESS | Solar Solutions in Lahore, Pakistan" },
       {
         name: "description",
         content:
-          "SunMax Energy Solutions supplies and installs solar panels, inverters and lithium batteries for homes, businesses and industry in Lahore and across Pakistan.",
+          "SunBox ESS supplies and installs solar panels, inverters and lithium batteries for homes, businesses and industry in Lahore and across Pakistan.",
       },
-      { name: "author", content: "SunMax Energy Solutions" },
-      { property: "og:site_name", content: "SunMax Energy Solutions" },
+      { name: "author", content: "SunBox ESS" },
+      { property: "og:site_name", content: "SunBox ESS" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

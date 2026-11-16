@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/sunmax/SiteHeader";
-import { RateTicker } from "@/components/sunmax/RateTicker";
+import { SiteHeader } from "@/components/sunbox-ess/SiteHeader";
+import { RateTicker } from "@/components/sunbox-ess/RateTicker";
 import {
   About,
   Brands,
@@ -13,12 +13,12 @@ import {
   SiteFooter,
   StatsBand,
   Team,
-} from "@/components/sunmax/Sections";
+} from "@/components/sunbox-ess/Sections";
 
 const SITE = "https://sunboxess.com";
-const title = "SunMax Solar Lahore | Panels, Inverters & Installation";
+const title = "SunBox ESS Solar Lahore | Panels, Inverters & Installation";
 const description =
-  "SunMax Energy Solutions installs solar systems across Lahore — DHA, Bahria Town, Johar Town and more — supplying Tier-1 panels, inverters and lithium batteries. Call +92 321 8452143.";
+  "SunBox ESS installs solar systems across Lahore — DHA, Bahria Town, Johar Town and more — supplying Tier-1 panels, inverters and lithium batteries. Call +92 321 8452143.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/` },
-      { property: "og:site_name", content: "SunMax Energy Solutions" },
+      { property: "og:site_name", content: "SunBox ESS" },
       { property: "og:locale", content: "en_PK" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "SunMax Energy Solutions",
+          name: "SunBox ESS",
           description,
           url: `${SITE}/`,
           telephone: "+92 321 8452143",

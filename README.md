@@ -1,6 +1,6 @@
-# SunMax Energy Solutions
+# SunBox ESS
 
-Marketing site for SunMax Energy Solutions, a Lahore-based solar equipment supplier and installer.
+Marketing site for SunBox ESS, a Lahore-based solar equipment supplier and installer.
 
 **Live site**: https://sunboxess.com
 
