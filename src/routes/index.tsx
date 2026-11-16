@@ -15,7 +15,7 @@ import {
   Team,
 } from "@/components/sunmax/Sections";
 
-const SITE = "https://sunmaxpk.com";
+const SITE = "https://sunboxess.com";
 const title = "SunMax Solar Lahore | Panels, Inverters & Installation";
 const description =
   "SunMax Energy Solutions installs solar systems across Lahore — DHA, Bahria Town, Johar Town and more — supplying Tier-1 panels, inverters and lithium batteries. Call +92 321 8452143.";

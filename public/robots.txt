@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://sunmaxpk.com/sitemap.xml
+Sitemap: https://sunboxess.com/sitemap.xml

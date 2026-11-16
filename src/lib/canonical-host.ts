@@ -1,7 +1,7 @@
-export const CANONICAL_HOST = "sunmaxpk.com";
+export const CANONICAL_HOST = "sunboxess.com";
 
 // Hosts that should permanently redirect to the canonical domain.
-const REDIRECT_HOSTS = new Set(["www.sunmaxpk.com", "sunboxess.com", "www.sunboxess.com"]);
+const REDIRECT_HOSTS = new Set(["www.sunboxess.com", "sunmaxpk.com", "www.sunmaxpk.com"]);
 
 export function canonicalRedirect(request: Request): Response | null {
   const url = new URL(request.url);

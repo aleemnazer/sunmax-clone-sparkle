@@ -2,7 +2,7 @@
 
 Marketing site for SunMax Energy Solutions, a Lahore-based solar equipment supplier and installer.
 
-**Live site**: https://sunmaxpk.com
+**Live site**: https://sunboxess.com
 
 ## Development
 
